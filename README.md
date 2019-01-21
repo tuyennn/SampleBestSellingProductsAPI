@@ -7,15 +7,17 @@ This Magento 2 extension is A sample Magento 2 WEB API returns list of best-sell
 
 ## Main Features
 
-* Use REST API end point > GET /v1/products/bestsellers
+* Use REST API end point > GET `/v1/products/bestsellers`
+* Use Magento standard format of product api
+* Use `sales_bestsellers_aggregated_daily` table for data collection.
 
 ## Configure and Manage
 
 * No configuration
 * Resource for api link is anonymous and use GET method.
-* Use 'period' as custom searchCriteria field for filtered by date range value format: YYYY-MM-DD. With 'condition_type' available: from, to, gt, lt.
-* Use 'special_price' searchCriteria field for filtered by only discounted products (has special price)
-* Use 'total_sales' as custom sort order for sort by total sales(number of sold items): ASC or DESC.
+* Use `period` as custom searchCriteria field for filtered by date range value format: `YYYY-MM-DD` (With `condition_type` available: `from`, `to`, `gt`, `lt`).
+* Use `special_price` searchCriteria field for filtered by only discounted products (has special price): `notnull`
+* Use `total_sale` as custom sort order for sort by total sales(number of sold items): `ASC` or `DESC`.
 
 | Key  | Value |
 | ------------- | ------------- |
