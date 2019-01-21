@@ -1,0 +1,22 @@
+{
+    "name": "central/product",
+    "description": "",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Tuyen Nguyen",
+            "email": "tuyen.n@shopstack.asia"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Central\\Product\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}
