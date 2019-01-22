@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Catalog\Model\ResourceModel\Product\Collection">
+        <plugin name="fixBugGroupAPIProductBestSeller" type="Central\Product\Plugin\Model\ResourceModel\Product\Collection" />
+    </type>
+</config>

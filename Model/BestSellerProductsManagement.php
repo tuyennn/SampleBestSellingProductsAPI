@@ -110,12 +110,11 @@ class BestSellerProductsManagement implements \Central\Product\Api\BestSellerPro
             $this->addFilterGroupToCollection($group, $collection);
         }
 
-        $totalCount = clone $collection;
-
         //Add SortOrder from root sort Order to the collection
         foreach ((array)$searchCriteria->getSortOrders() as $sortOrder) {
             $this->addSortOrderToCollection($sortOrder, $collection);
         }
+
         $collection->setCurPage($searchCriteria->getCurrentPage());
         $collection->setPageSize($searchCriteria->getPageSize());
         $collection->load();
@@ -125,7 +124,7 @@ class BestSellerProductsManagement implements \Central\Product\Api\BestSellerPro
         $searchResult = $this->searchResultsFactory->create();
         $searchResult->setSearchCriteria($searchCriteria);
         $searchResult->setItems($collection->getItems());
-        $searchResult->setTotalCount($totalCount->count());
+        $searchResult->setTotalCount($collection->getSize());
         return $searchResult;
     }
 
