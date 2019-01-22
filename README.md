@@ -50,6 +50,14 @@ php bin/magento setup:upgrade
 php bin/magento di:compile
 php bin/magento setup:static-content:deploy
 ```
+
+## Note
+
+* The API will response the real exist products while the bestseller statistic report might return the deleted products.
+* The API will not use the `rating_post` from report table so the data will not be limited by default number `5` which used for number of row and items cannot have `rating_post` more than `5`.
+
+[Reference](https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Sales/Model/ResourceModel/Report/Bestsellers/Collection.php#L149-L193)
+
 ## Licence
 
 [Open Software License (OSL 3.0)](http://opensource.org/licenses/osl-3.0.php)
