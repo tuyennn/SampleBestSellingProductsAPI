@@ -101,7 +101,7 @@ class BestSellerProductsManagement implements \Central\Product\Api\BestSellerPro
             ->join(
                 ['aggregation' => $collection->getTable('sales_bestsellers_aggregated_daily')],
                 "e.entity_id = aggregation.product_id AND aggregation.store_id = {$this->_currentStoreId}",
-                ['SUM(aggregation.qty_ordered) AS total_sales']
+                ['total_qty' => 'SUM(aggregation.qty_ordered)', 'total_sales' => 'SUM(aggregation.product_price)']
             )
             ->group('e.entity_id');
 
@@ -258,6 +258,12 @@ class BestSellerProductsManagement implements \Central\Product\Api\BestSellerPro
         if ($sortOrder->getField() == 'total_sales') {
             $direction = ($sortOrder->getDirection() == SortOrder::SORT_ASC) ? 'ASC' : 'DESC';
             $collection->getSelect()->order(["total_sales {$direction}"]);
+            return true;
+        }
+
+        if ($sortOrder->getField() == 'total_qty') {
+            $direction = ($sortOrder->getDirection() == SortOrder::SORT_ASC) ? 'ASC' : 'DESC';
+            $collection->getSelect()->order(["total_qty {$direction}"]);
             return true;
         }
 

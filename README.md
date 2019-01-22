@@ -9,7 +9,7 @@ This Magento 2 extension is A sample Magento 2 WEB API returns list of best-sell
 
 * Use REST API end point > GET `/v1/products/bestsellers`
 * Use Magento standard format of product api
-* Use `sales_bestsellers_aggregated_daily` table for data collection and `SUM(aggregation.qty_ordered) AS total_sales`.
+* Use `sales_bestsellers_aggregated_daily` table for data collection and `SUM(aggregation.qty_ordered) AS total_qty` and `SUM(aggregation.product_price) AS total_sales`.
 
 ## Configure and Manage
 
@@ -17,7 +17,8 @@ This Magento 2 extension is A sample Magento 2 WEB API returns list of best-sell
 * Resource for api link is anonymous and use GET method.
 * Use `period` as custom searchCriteria field for filtered by date range value format: `YYYY-MM-DD` (With `condition_type` available: `from`, `to`, `gt`, `lt`).
 * Use `special_price` searchCriteria field for filtered by only discounted products (has special price): `notnull`
-* Use `total_sale` as custom sort order for sort by total sales(number of sold items): `ASC` or `DESC`.
+* Use `total_qty` as custom sort order for sort by total qty(number of sold items): `ASC` or `DESC`.
+* Use `total_sales` as custom sort order for sort by total sales(amount price of sold items): `ASC` or `DESC`.
 * More detail about [API's documentation](https://documenter.getpostman.com/view/2961659/RzteRXX2)
  
 
