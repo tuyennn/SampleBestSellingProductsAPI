@@ -18,6 +18,8 @@ This Magento 2 extension is A sample Magento 2 WEB API returns list of best-sell
 * Use `period` as custom searchCriteria field for filtered by date range value format: `YYYY-MM-DD` (With `condition_type` available: `from`, `to`, `gt`, `lt`).
 * Use `special_price` searchCriteria field for filtered by only discounted products (has special price): `notnull`
 * Use `total_sale` as custom sort order for sort by total sales(number of sold items): `ASC` or `DESC`.
+* More detail about [API's documentation](https://documenter.getpostman.com/view/2961659/RzteRXX2)
+ 
 
 | Key  | Value |
 | ------------- | ------------- |
@@ -25,7 +27,6 @@ This Magento 2 extension is A sample Magento 2 WEB API returns list of best-sell
 | searchCriteria[currentPage]  | 1  |
 | searchCriteria[sortOrders][0][field] | total_sales  |
 | searchCriteria[sortOrders][0][direction]  | DESC  |
-| fields  | items[id,sku,price,name,custom_attributes],search_criteria,total_count  |
 | searchCriteria[filter_groups][0][filters][0][field]  | period  |
 | searchCriteria[filter_groups][0][filters][0][condition_type]  | from  |
 | searchCriteria[filter_groups][0][filters][0][value]  | 2018-01-01  |
