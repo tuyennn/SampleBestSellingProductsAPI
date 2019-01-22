@@ -9,7 +9,7 @@ This Magento 2 extension is A sample Magento 2 WEB API returns list of best-sell
 
 * Use REST API end point > GET `/v1/products/bestsellers`
 * Use Magento standard format of product api
-* Use `sales_bestsellers_aggregated_daily` table for data collection.
+* Use `sales_bestsellers_aggregated_daily` table for data collection and `SUM(aggregation.qty_ordered) AS total_sales`.
 
 ## Configure and Manage
 
